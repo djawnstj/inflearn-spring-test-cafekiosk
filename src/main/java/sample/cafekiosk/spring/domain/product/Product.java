@@ -30,7 +30,7 @@ public class Product extends BaseEntity {
     private int price;
 
     @Builder
-    public Product(final String productNumber, final ProductType type, final ProductSellingStatus sellingStatus, final String name, final int price) {
+    private Product(final String productNumber, final ProductType type, final ProductSellingStatus sellingStatus, final String name, final int price) {
         this.productNumber = productNumber;
         this.type = type;
         this.sellingStatus = sellingStatus;
