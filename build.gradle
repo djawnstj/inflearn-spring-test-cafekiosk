@@ -43,6 +43,7 @@ dependencies {
 
     // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
 tasks.withType(KotlinCompile) {
