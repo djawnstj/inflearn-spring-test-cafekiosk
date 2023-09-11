@@ -33,7 +33,7 @@ class StockRepositoryTest {
         // when
         final List<Stock> stocks = stockRepository.findAllByProductNumberIn(List.of("001", "002"));
 
-        //then
+        // then
         assertThat(stocks).hasSize(2)
                 .extracting("productNumber", "quantity")
                 .containsExactlyInAnyOrder(

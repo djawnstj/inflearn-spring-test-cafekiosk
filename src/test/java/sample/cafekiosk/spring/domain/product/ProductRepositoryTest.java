@@ -31,7 +31,7 @@ class ProductRepositoryTest {
         // when
         final List<Product> products = productRepository.findAllBySellingStatusIn(List.of(ProductSellingStatus.SELLING, ProductSellingStatus.HOLD));
 
-        //then
+        // then
         assertThat(products).hasSize(2)
                 .extracting("productNumber", "name", "sellingStatus")
                 .containsExactlyInAnyOrder(
@@ -53,7 +53,7 @@ class ProductRepositoryTest {
         // when
         final List<Product> products = productRepository.findAllByProductNumberIn(List.of("001", "002"));
 
-        //then
+        // then
         assertThat(products).hasSize(2)
                 .extracting("productNumber", "name", "sellingStatus")
                 .containsExactlyInAnyOrder(
@@ -77,7 +77,7 @@ class ProductRepositoryTest {
         // when
         final String latestProductNumber = productRepository.findLatestProductNumber();
 
-        //then
+        // then
         assertThat(latestProductNumber).isEqualTo(targetProductNumber);
     }
 
@@ -87,7 +87,7 @@ class ProductRepositoryTest {
         // when
         final String latestProductNumber = productRepository.findLatestProductNumber();
 
-        //then
+        // then
         assertThat(latestProductNumber).isNull();
     }
 

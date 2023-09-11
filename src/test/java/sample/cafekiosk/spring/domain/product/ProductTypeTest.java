@@ -17,7 +17,7 @@ class ProductTypeTest {
         // when
         final boolean result = ProductType.containsStockType(givenType);
 
-        //then
+        // then
         assertThat(result).isFalse();
     }
 
@@ -30,7 +30,7 @@ class ProductTypeTest {
         // when
         final boolean result = ProductType.containsStockType(givenType);
 
-        //then
+        // then
         assertThat(result).isTrue();
     }
 

@@ -19,7 +19,7 @@ class StockTest {
         // when
         final boolean result = stock.isQuantityLessThen(quantity);
 
-        //then
+        // then
         assertThat(result).isTrue();
     }
 
@@ -33,7 +33,7 @@ class StockTest {
         // when
         stock.deductQuantity(quantity);
 
-        //then
+        // then
         assertThat(stock.getQuantity()).isZero();
     }
 
@@ -44,7 +44,7 @@ class StockTest {
         final Stock stock = Stock.create("001", 1);
         final int quantity = 2;
 
-        // when //then
+        // when // then
         assertThatThrownBy(() -> stock.deductQuantity(quantity))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("차감할 재고 수량이 없습니다.");

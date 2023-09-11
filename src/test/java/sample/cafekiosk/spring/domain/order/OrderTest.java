@@ -25,7 +25,7 @@ class OrderTest {
         // when
         final Order order = Order.create(products, LocalDateTime.now());
 
-        //then
+        // then
         assertThat(order.getTotalPrice()).isEqualTo(3000);
     }
 
@@ -41,7 +41,7 @@ class OrderTest {
         // when
         final Order order = Order.create(products, LocalDateTime.now());
 
-        //then
+        // then
         // ENUM 비교할 때 사용
         assertThat(order.getOrderStatus()).isEqualByComparingTo(OrderStatus.INIT);
     }
@@ -59,7 +59,7 @@ class OrderTest {
         // when
         final Order order = Order.create(products, registeredDateTime);
 
-        //then
+        // then
         // ENUM 비교할 때 사용
         assertThat(order.getRegisteredDateTime()).isEqualTo(registeredDateTime);
     }

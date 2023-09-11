@@ -70,9 +70,9 @@ class OrderServiceTest {
                 .build();
 
         // when
-        OrderResponse orderResponse = orderService.createOrder(request, registeredDateTime);
+        OrderResponse orderResponse = orderService.createOrder(request.toServiceRequest(), registeredDateTime);
 
-        //then
+        // then
         assertThat(orderResponse.getId()).isNotNull();
         assertThat(orderResponse)
                 .extracting("registeredDateTime", "totalPrice")
@@ -103,9 +103,9 @@ class OrderServiceTest {
                 .build();
 
         // when
-        OrderResponse orderResponse = orderService.createOrder(request, registeredDateTime);
+        OrderResponse orderResponse = orderService.createOrder(request.toServiceRequest(), registeredDateTime);
 
-        //then
+        // then
         assertThat(orderResponse.getId()).isNotNull();
         assertThat(orderResponse)
                 .extracting("registeredDateTime", "totalPrice")
@@ -141,10 +141,10 @@ class OrderServiceTest {
                 .build();
 
         // when
-        final OrderResponse orderResponse = orderService.createOrder(request, registeredDateTime);
+        final OrderResponse orderResponse = orderService.createOrder(request.toServiceRequest(), registeredDateTime);
         final List<Stock> stocks = stockRepository.findAll();
 
-        //then
+        // then
         assertThat(orderResponse.getId()).isNotNull();
         assertThat(orderResponse)
                 .extracting("registeredDateTime", "totalPrice")
@@ -189,8 +189,8 @@ class OrderServiceTest {
                 .productNumbers(List.of("001", "001", "002", "003"))
                 .build();
 
-        // when //then
-        assertThatThrownBy(() -> orderService.createOrder(request, registeredDateTime))
+        // when // then
+        assertThatThrownBy(() -> orderService.createOrder(request.toServiceRequest(), registeredDateTime))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("재고가 부족한 상품이 있습니다.");
 
