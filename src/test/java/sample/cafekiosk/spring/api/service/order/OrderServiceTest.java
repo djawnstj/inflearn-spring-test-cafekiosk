@@ -1,4 +1,4 @@
-package sample.cafekiosk.spring.domain.api.service.order;
+package sample.cafekiosk.spring.api.service.order;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
@@ -167,7 +167,7 @@ class OrderServiceTest {
 
     }
 
-    @DisplayName("재고가 없는 상품으로 주문을 생성하려는 경우 예외가 발생한다..")
+    @DisplayName("재고가 부족한 상품으로 주문을 생성하려는 경우 예외가 발생한다..")
     @Test
     public void createOrderWithNoStock() throws Exception {
         // given
