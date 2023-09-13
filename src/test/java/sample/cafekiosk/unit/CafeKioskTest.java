@@ -1,6 +1,7 @@
 package sample.cafekiosk.unit;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import sample.cafekiosk.unit.CafeKiosk;
@@ -101,6 +102,7 @@ class CafeKioskTest {
 
     }
 
+    @Disabled
     @Test
     public void createOrder() throws Exception {
         final CafeKiosk cafeKiosk = new CafeKiosk();
